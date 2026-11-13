@@ -3,12 +3,74 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Anagrafica</title>
+    <title>Anagrafica - Andrea Modugno</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            color: #888;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #8b75ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        table {
+            margin: 30px auto;
+            border-collapse: collapse;
+            background: #222;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #555;
+        }
+
+        th {
+            color: #8b75ff;
+        }
+
+        a {
+            color: #8b75ff;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Anagrafica</h1>
+    <header>
+        <h1>ANDREA MODUGNO</h1>
+        <h2>Anagrafica</h2>
+        <a href="index.html">Torna alla Home</a>
+    </header>
 
     Nome:
     <input type="text" id="nome"><br><br>
@@ -27,9 +89,8 @@
 
     <button onclick="aggiungi()">Aggiungi</button>
 
-    <br><br>
+    <table id="tabella">
 
-    <table border="1" id="tabella">
         <tr>
             <th>Nome</th>
             <th>Cognome</th>
@@ -37,44 +98,39 @@
             <th>Città</th>
             <th>Età</th>
         </tr>
+
     </table>
 
     <script>
 
         function aggiungi() {
 
-            // Prendo i valori degli input
             let nome = document.getElementById("nome").value;
             let cognome = document.getElementById("cognome").value;
             let indirizzo = document.getElementById("indirizzo").value;
             let citta = document.getElementById("citta").value;
             let eta = document.getElementById("eta").value;
 
-            // Creo una nuova riga
             let riga = document.createElement("tr");
 
-            // Creo le celle
-            let cella1 = document.createElement("td");
-            let cella2 = document.createElement("td");
-            let cella3 = document.createElement("td");
-            let cella4 = document.createElement("td");
-            let cella5 = document.createElement("td");
+            let c1 = document.createElement("td");
+            let c2 = document.createElement("td");
+            let c3 = document.createElement("td");
+            let c4 = document.createElement("td");
+            let c5 = document.createElement("td");
 
-            // Inserisco i dati nelle celle
-            cella1.textContent = nome;
-            cella2.textContent = cognome;
-            cella3.textContent = indirizzo;
-            cella4.textContent = citta;
-            cella5.textContent = eta;
+            c1.textContent = nome;
+            c2.textContent = cognome;
+            c3.textContent = indirizzo;
+            c4.textContent = citta;
+            c5.textContent = eta;
 
-            // Aggiungo le celle alla riga
-            riga.appendChild(cella1);
-            riga.appendChild(cella2);
-            riga.appendChild(cella3);
-            riga.appendChild(cella4);
-            riga.appendChild(cella5);
+            riga.appendChild(c1);
+            riga.appendChild(c2);
+            riga.appendChild(c3);
+            riga.appendChild(c4);
+            riga.appendChild(c5);
 
-            // Aggiungo la riga alla tabella
             document.getElementById("tabella").appendChild(riga);
 
         }
@@ -83,4 +139,3 @@
 
 </body>
 </html>
-
